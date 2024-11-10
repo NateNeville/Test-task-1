@@ -1,0 +1,251 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a {
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
+}
+
+ul,
+ul li {
+  list-style: none;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Montserrat", sans-serif;
+}
+
+.calendars {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 3rem;
+  transition: all 0.3s ease-in;
+}
+.calendars .task-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 5px;
+}
+.calendars .task-header .task-header h2 {
+  font-size: 32px;
+}
+.calendars .task-header .theme-change-btn {
+  position: relative;
+  width: 80px;
+  height: 40px;
+  border: none;
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.75);
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+}
+.calendars .task-header .theme-change-btn::before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background-color: #fff;
+  transition: all 0.3s ease-in;
+}
+.calendars .task-header .theme-change-btn .fa-moon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  color: rgb(255, 255, 255);
+  opacity: 1;
+  transition: all 0.3s ease-in;
+}
+.calendars .task-header .theme-change-btn .fa-sun {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 20px;
+  color: rgb(251, 251, 113);
+  opacity: 0;
+  transition: all 0.3s ease-in;
+}
+.calendars .task-header .theme-change-btn.active {
+  background-color: rgba(153, 194, 220, 0.9764705882);
+}
+.calendars .task-header .theme-change-btn.active::before {
+  background-color: #fbfb71;
+  transform: translateX(40px);
+}
+.calendars .task-header .theme-change-btn.active .fa-moon {
+  opacity: 0;
+}
+.calendars .task-header .theme-change-btn.active .fa-sun {
+  opacity: 1;
+}
+.calendars .calendars-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.calendars .calendars-wrapper .calendar {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 300px;
+  padding: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.15);
+  font-size: 14px;
+}
+.calendars .calendars-wrapper .calendar .calendar-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.calendars .calendars-wrapper .calendar .calendar-header .nav-arrow-btn {
+  padding: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+  cursor: pointer;
+}
+.calendars .calendars-wrapper .calendar .weekdays {
+  display: flex;
+}
+.calendars .calendars-wrapper .calendar .dates {
+  display: flex;
+  flex-wrap: wrap;
+  height: 200px;
+}
+.calendars .calendars-wrapper .calendar .dates .fade {
+  color: rgba(0, 0, 0, 0.3);
+}
+.calendars .calendars-wrapper .calendar .weekdays div,
+.calendars .calendars-wrapper .calendar .dates div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 14.28%;
+}
+.calendars .month-navigation-links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+  padding-left: 5px;
+  font-size: 18px;
+}
+.calendars.dark {
+  background-color: #2c3649;
+  color: #fff;
+}
+.calendars.dark .calendar {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0px 7px 10px rgba(255, 255, 255, 0.15);
+}
+.calendars.dark .calendar .calendar-header .nav-arrow-btn {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.calendars.dark .calendar .dates .fade {
+  color: rgba(255, 255, 255, 0.3);
+}
+@media screen and (max-width: 480px) {
+  .calendars .calendars-wrapper {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+.geopassport {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  background-color: #2c3649;
+  color: #fff;
+}
+.geopassport .geopassport-logo {
+  flex: 1;
+}
+.geopassport .geopassport-description {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2rem;
+  flex: 2;
+  padding: 25px;
+}
+.geopassport .geopassport-description .geopassport-header {
+  position: relative;
+  padding: 0 65px 0 60px;
+  background-color: #6f45e0;
+  font-size: 44px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+.geopassport .geopassport-description .geopassport-header::before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 100%;
+  top: 0;
+  left: 15px;
+  background-color: #000;
+}
+.geopassport .geopassport-description .geopassport-header::after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 100%;
+  top: 0;
+  right: 0;
+  background-color: #f73373;
+}
+.geopassport .geopassport-description p {
+  font-size: 16px;
+  line-height: 24px;
+  text-align: justify;
+}
+@media screen and (max-width: 480px) {
+  .geopassport {
+    flex-direction: column;
+  }
+  .geopassport .geopassport-description .geopassport-header {
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 0 55px 0 45px;
+  }
+  .geopassport .geopassport-description .geopassport-header::before {
+    width: 20px;
+    height: 100%;
+    top: 0;
+    left: 10px;
+  }
+  .geopassport .geopassport-description .geopassport-header::after {
+    width: 35px;
+  }
+  .geopassport .geopassport-description p {
+    font-size: 14px;
+    text-align: center;
+  }
+}
